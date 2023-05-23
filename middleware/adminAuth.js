@@ -7,7 +7,7 @@ const adminAuthentication = async (req, res, next) => {
       // console.log("authHeader",authHeader);
     
       if (!authHeader || !authHeader.startsWith('Bearer ')) {
-          throw new Error('Unauthorized: No token provided');
+        return res.redirect('/adminSignin')
         }
         
         const token = authHeader.split(' ')[1];

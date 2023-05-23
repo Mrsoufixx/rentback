@@ -35,6 +35,10 @@ const rentcartSchema = new mongoose.Schema({
             model: {
                 type : String,
                 required : true
+            },
+            imageSrc: {
+                type : String,
+                required : true
             }
         }
     ]

@@ -25,6 +25,7 @@ router.post('/addtocartvehicule', useAuth, async (req, res) => {
     const itemPrice = findItem.rent;
     const itemBrand = findItem.brand;
     const itemModel = findItem.model;
+    const itemImgPath = findItem.filePath;
 
     const newCartItem = {
       rentvehiculeid: itemId,
@@ -33,6 +34,7 @@ router.post('/addtocartvehicule', useAuth, async (req, res) => {
       totalbill: itemPrice * rentHours,
       brand: itemBrand,
       model: itemModel,
+      imageSrc : itemImgPath
     };
 
     let loginUser = await Rentcart.findOne({ userById: findUser._id });

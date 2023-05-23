@@ -22,7 +22,9 @@ module.exports= router.use("/getCartData" ,userAuth, async (req, res) => {
 module.exports= router.use("/deleteItemFromCart" ,userAuth, async (req, res) => {
   try {
     const user = req.rootUser;
+    // console.log("user",user)
     const { cartitemid } = req.body;
+    // console.log("cartitemid",cartitemid)
 
     await RentcartModel.updateOne(
       { userById: user._id },
